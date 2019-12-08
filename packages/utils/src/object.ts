@@ -261,7 +261,7 @@ export function walk(key: string, value: any, depth: number = +Infinity, memo: M
   // If value implements `toJSON` method, call it and return early
   // tslint:disable:no-unsafe-any
   if (value !== null && value !== undefined && typeof value.toJSON === 'function') {
-    return value.toJSON();
+    return value.toJSON({sentry: true});
   }
   // tslint:enable:no-unsafe-any
 
